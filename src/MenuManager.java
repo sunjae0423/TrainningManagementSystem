@@ -3,34 +3,29 @@ import java.util.Scanner;
 public class MenuManager {
 
 	public static void main(String[] args) {
-		
-		int num = 0;
-		int Reps=0;
-		int Set= 0;
 		Scanner input = new Scanner(System.in);
-		
-		
-		
-		while ( num != 6){
+		TrainningManager TrainningManager = new TrainningManager(input);
+		int num = 0;
+			
+		while ( num != 5){
 			System.out.println("1. Add Trainning Program");
 		    System.out.println("2. Delete Trainning Program");
 		    System.out.println("3. Edit Trainning Program");
             System.out.println("4. View Trainning Program");
-	        System.out.println("5. Show A Menu");
-	        System.out.println("6. Exit");
-	        System.out.print("Select one number between 1-6 : ");
+	        System.out.println("5. Exit");
+	        System.out.print("Select one number between 1-5 : ");
 	        num = input.nextInt();    
 	        if(num == 1) {
-	        	AddTrainningProgram();
+	        	TrainningManager.AddTrainningProgram();
 	        }
 	        else if(num == 2) {
-	        	DeleteTrainningProgram();
+	        	TrainningManager.DeleteTrainningProgram();
 	        }
 	        else if(num == 3) {
-	        	EditTrainningProgram();
+	        	TrainningManager.EditTrainningProgram();
 	        }
 	        else if(num == 4) {
-	        	ViewTrainningProgram();
+	        	TrainningManager.ViewTrainningProgram();
 	        }
 	        else {
 	        	continue;
@@ -40,31 +35,6 @@ public class MenuManager {
 		}
 
 	}
-	public static void AddTrainningProgram() {
-		
-		Scanner input = new Scanner(System.in);
-		System.out.print("TrainningProgram : ");
-		String Trainning = input.next();
-		System.out.print("Reps: ");
-		int Rep= input.nextInt();
-		System.out.print("Sets: ");
-		int Set = input.nextInt();
-	}
-	public static void DeleteTrainningProgram() {
-		Scanner input = new Scanner(System.in);
-		System.out.print("TrainningProgram : ");
-		String Trainning = input.next();
-	}
-    public static void EditTrainningProgram() {
-    	Scanner input = new Scanner(System.in);
-		System.out.print("TrainningProgram : ");
-		String Trainning = input.next();
-	}
-    public static void ViewTrainningProgram() {
-    	Scanner input = new Scanner(System.in);
-		System.out.print("TrainningProgram : ");
-		String Trainning = input.next();
-    }
-    
+	
 }
 
