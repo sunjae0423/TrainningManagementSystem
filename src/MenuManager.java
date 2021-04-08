@@ -16,16 +16,16 @@ public class MenuManager {
 	        System.out.print("Select one number between 1-5 : ");
 	        num = input.nextInt();    
 	        if(num == 1) {
-	        	TrainningManager.AddTrainningProgram();
+	        	TrainningManager.AddTrainning();
 	        }
 	        else if(num == 2) {
-	        	TrainningManager.DeleteTrainningProgram();
+	        	TrainningManager.DeleteTrainning();
 	        }
 	        else if(num == 3) {
-	        	TrainningManager.EditTrainningProgram();
+	        	TrainningManager.EditTrainning();
 	        }
 	        else if(num == 4) {
-	        	TrainningManager.ViewTrainningProgram();
+	        	TrainningManager.ViewTrainning();
 	        }
 	        else {
 	        	continue;
