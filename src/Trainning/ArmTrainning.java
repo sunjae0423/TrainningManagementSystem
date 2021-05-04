@@ -2,12 +2,20 @@ package Trainning;
 
 import java.util.Scanner;
 
-public class Chesttrainning extends Trainning {
+public class ArmTrainning extends Trainning {
+	
+	public ArmTrainning(TrainningKind kind) {
+    	super(kind);
+    }
 	
 	public void getUserInput(Scanner input) {
     	System.out.print("TrainningProgram : ");
 		String Trainning = input.next();
 		this.setTrainning(Trainning);
+		
+		System.out.print("weight(kg): ");
+		int weight= input.nextInt();
+		this.setWeight(weight);
 		
 		System.out.print("Reps: ");
 		int Reps= input.nextInt();
@@ -21,5 +29,4 @@ public class Chesttrainning extends Trainning {
 		
     	
     }
-
 }
