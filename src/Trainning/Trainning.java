@@ -2,15 +2,13 @@ package Trainning;
 
 import java.util.Scanner;
 
-public class Trainning {
+public abstract class  Trainning {
 	protected TrainningKind kind = TrainningKind.Chest;
 	protected String Trainning;
     protected int Reps;
     protected int Sets;
     protected int weight;
     
-    
-
 	public Trainning() {
     	
     }
@@ -75,46 +73,10 @@ public class Trainning {
 	public void setSets(int sets) {
 		Sets = sets;
 	}
-
+	
     String skind = "none";
-    public void printInfo() {
-    	switch(this.kind) {
-    	case Chest:
-    		skind = "Chest";
-    		break;
-    	case Back:
-    		skind = "Back";
-    		break;
-    	case Shoulder:
-    		skind = "Shoulder";
-    		break;
-    	case Arm:
-    		skind = "Arm";
-    		break;
-    	case Leg:
-    		skind = "Leg";
-    		break;
-    	}
-    	System.out.println("Kind : " +kind + ", Trainning : " + Trainning + ", weight : " + weight + "kg, Reps : " + Reps + ", Sets : " + Sets);
+    
+    public abstract void printInfo(); 
     	
-    }
-    public void getUserInput(Scanner input) {
-    	System.out.print("TrainningProgram : ");
-	    String Trainning = input.next();
-		this.setTrainning(Trainning);
-		
-		System.out.print("weight: ");
-		int weight= input.nextInt();
-		this.setReps(weight);
-		
-		
-		System.out.print("Reps: ");
-		int Reps= input.nextInt();
-		this.setReps(Reps);
-		
-		System.out.print("Sets: ");
-		int Sets = input.nextInt();
-		this.setSets(Sets);
-    	
-    }
+    
 }

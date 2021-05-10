@@ -8,16 +8,17 @@ import Trainning.LegTrainning;
 import Trainning.ShoulderTrainning;
 import Trainning.Trainning;
 import Trainning.TrainningKind;
+import Trainning.Trainninginput;
 
 public class TrainningManager {	
-	ArrayList<Trainning> trainnings = new ArrayList<Trainning>();
+	ArrayList<Trainninginput> trainnings = new ArrayList<Trainninginput>();
 	Scanner input;
 	TrainningManager(Scanner input){
 		this.input = input;
 	}	
 	public void AddTrainning() {
 		int kind = 0;
-		Trainning trainning;
+		Trainninginput trainninginput;
 		while(kind != 6) {
 			System.out.println("1 Chest : ");
 			System.out.println("2 Back : ");
@@ -27,33 +28,33 @@ public class TrainningManager {
 			System.out.print("Select num for Trainning Kind between 1, 2, 3, 4 or 5 : ");
 			kind = input.nextInt();
 			if(kind == 1) {
-				trainning = new ChestTrainning(TrainningKind.Chest);
-				trainning.getUserInput(input);
-				trainnings.add(trainning);
+				trainninginput = new ChestTrainning(TrainningKind.Chest);
+				trainninginput.getUserInput(input);
+				trainnings.add(trainninginput);
 				break;
 			}
 			else if(kind == 2) {
-				trainning  = new BackTrainning(TrainningKind.Back);
-				trainning.getUserInput(input);
-				trainnings.add(trainning);
+				trainninginput  = new BackTrainning(TrainningKind.Back);
+				trainninginput.getUserInput(input);
+				trainnings.add(trainninginput);
 				break;
 			}
 			else if(kind == 3) {
-				trainning  = new ShoulderTrainning(TrainningKind.Shoulder);
-				trainning.getUserInput(input);
-				trainnings.add(trainning);
+				trainninginput  = new ShoulderTrainning(TrainningKind.Shoulder);
+				trainninginput.getUserInput(input);
+				trainnings.add(trainninginput);
 				break;
 			}
 			else if(kind == 4) {
-				trainning  = new ArmTrainning(TrainningKind.Arm);
-				trainning.getUserInput(input);
-				trainnings.add(trainning);
+				trainninginput  = new ArmTrainning(TrainningKind.Arm);
+				trainninginput.getUserInput(input);
+				trainnings.add(trainninginput);
 				break;
 			}
 			else if(kind == 5) {
-				trainning  = new LegTrainning(TrainningKind.Leg);
-				trainning.getUserInput(input);
-				trainnings.add(trainning);
+				trainninginput  = new LegTrainning(TrainningKind.Leg);
+				trainninginput.getUserInput(input);
+				trainnings.add(trainninginput);
 				break;
 			}
 			else {
@@ -63,7 +64,7 @@ public class TrainningManager {
 	}
 	public void DeleteTrainning() {
 		System.out.print("TrainningProgram : ");
-		String Trainning = input.nextLine();
+		String Trainning = input.next();	
 		int index = -1;
 		for(int i= 0; i<trainnings.size();i++) {
 			if(trainnings.get(i).getTrainning().equals(Trainning)) {
@@ -73,7 +74,7 @@ public class TrainningManager {
 		}
 		if(index>=0) {
 			trainnings.remove(index);
-			System.out.println("the trainning"+ Trainning + "is deleted");
+			System.out.println("the trainning "+ Trainning + " is deleted");
 		}
 		else {
 			System.out.println("the trainning has not been registered");
@@ -82,10 +83,10 @@ public class TrainningManager {
 	}		
     public void EditTrainning() {
     	System.out.println("TrainningProgram : ");
-    	String Trainning = input.nextLine();
+    	String Trainning = input.next();
     	for(int i= 0; i<trainnings.size();i++) {
-    		Trainning trainning = trainnings.get(i);
-    		if(trainning.getTrainning().equals(Trainning)) {
+    		Trainninginput trainninginput = trainnings.get(i);
+    		if(trainninginput.getTrainning().equals(Trainning)) {
     			int num = -1; 
     			while(num != 5) {
     				System.out.println("**Trainning Info Edit Menu**");
@@ -99,22 +100,22 @@ public class TrainningManager {
 	    			if(num == 1){
 	    				System.out.print("Trainnig : ");
 	    				Trainning= input.nextLine();
-	    				trainning.setTrainning(Trainning);			
+	    				trainninginput.setTrainning(Trainning);			
 	    			}
 	    			else if(num == 2) {
 	    				System.out.print("Weight : ");
 	    				int weight = input.nextInt();	
-	    				trainning.setWeight(weight);
+	    				trainninginput.setWeight(weight);
 	    			}
 	    			else if(num == 3) {
 	    				System.out.print("Reps : ");
 	    				int Reps = input.nextInt();	
-	    				trainning.setReps(Reps);
+	    				trainninginput.setReps(Reps);
 	    			}
 	    			else if(num == 4){
 	    				System.out.print("Sets : ");
 	    				int Sets = input.nextInt();
-	    				trainning.setSets(Sets);
+	    				trainninginput.setSets(Sets);
 	    			}
 	    			else {
 	    				continue;

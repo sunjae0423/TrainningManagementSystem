@@ -2,7 +2,7 @@ package Trainning;
 
 import java.util.Scanner;
 
-public class ChestTrainning extends Trainning {
+public class ChestTrainning extends Trainning implements Trainninginput {
 	
 	public ChestTrainning(TrainningKind kind) {
     	super(kind);
@@ -24,9 +24,27 @@ public class ChestTrainning extends Trainning {
 		System.out.print("Sets: ");
 		int Sets = input.nextInt();
 		this.setSets(Sets);
-		
-				
-		
+    }
+	
+	public void printInfo() {
+    	switch(this.kind) {
+    	case Chest:
+    		skind = "Chest";
+    		break;
+    	case Back:
+    		skind = "Back";
+    		break;
+    	case Shoulder:
+    		skind = "Shoulder";
+    		break;
+    	case Arm:
+    		skind = "Arm";
+    		break;
+    	case Leg:
+    		skind = "Leg";
+    		break;
+    	}
+    	System.out.println("Kind : " +kind + ", Trainning : " + Trainning + ", weight : " + weight + "kg, Reps : " + Reps + ", Sets : " + Sets);
     	
     }
 
