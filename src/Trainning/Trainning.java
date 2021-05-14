@@ -2,7 +2,9 @@ package Trainning;
 
 import java.util.Scanner;
 
-public abstract class  Trainning {
+import exception.WeightFormatException;
+
+public abstract class  Trainning implements Trainninginput {
 	protected TrainningKind kind = TrainningKind.Chest;
 	protected String Trainning;
     protected int Reps;
@@ -55,7 +57,10 @@ public abstract class  Trainning {
 		return weight;
 	}
 
-	public void setWeight(int weight) {
+	public void setWeight(int weight) throws WeightFormatException{
+		if(weight < 0) {
+			throw new WeightFormatException();
+		}
 		this.weight = weight;
 	}
 	public int getReps() {
@@ -77,6 +82,63 @@ public abstract class  Trainning {
     String skind = "none";
     
     public abstract void printInfo(); 
+    
+    public void setTrainning(Scanner input) {
+    	System.out.print("Trainnig : ");
+		String Trainning= input.next();
+		this.setTrainning(Trainning);	
+    }
+    
+    public void setWeight(Scanner input) {
+    	int weight = -1;
+    	while(weight < 0) {
+	    	System.out.print("Weight : ");
+			weight = input.nextInt();	
+			try {
+				this.setWeight(weight);
+			}catch(WeightFormatException e) {
+				System.out.println("Incorrect Weight Format. put Weight more than 0 ");
+				
+			}
+    	}
+    }
+    
+    public void setReps(Scanner input) {
+    	System.out.print("Reps : ");
+		int Reps = input.nextInt();	
+		this.setReps(Reps);
+    }
+    
+    public void setSets(Scanner input) {
+    	System.out.print("Sets : ");
+		int Sets = input.nextInt();
+		this.setSets(Sets);
+    }
+    
+    public String getKindString() {
+		String skind = "none";
+    	switch(this.kind) {
+    	case Chest:
+    		skind = "Chest";
+    		break;
+    	case Back:
+    		skind = "Back";
+    		break;
+    	case Shoulder:
+    		skind = "Shoulder";
+    		break;
+    	case Arm:
+    		skind = "Arm";
+    		break;
+    	case Leg:
+    		skind = "Leg";
+    		break;
+    	default:
+    	}
+    	return skind;
+		
+	}
+    
     	
     
 }
