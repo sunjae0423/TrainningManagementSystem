@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -7,13 +8,17 @@ import Trainning.BackTrainning;
 import Trainning.ChestTrainning;
 import Trainning.LegTrainning;
 import Trainning.ShoulderTrainning;
-import Trainning.Trainning;
 import Trainning.TrainningKind;
 import Trainning.Trainninginput;
 
-public class TrainningManager {	
+public class TrainningManager implements Serializable{	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -429748277500542509L;
+	
 	ArrayList<Trainninginput> trainnings = new ArrayList<Trainninginput>();
-	Scanner input;
+	transient Scanner input;
 	TrainningManager(Scanner input){
 		this.input = input;
 	}	

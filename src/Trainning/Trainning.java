@@ -1,10 +1,16 @@
 package Trainning;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.WeightFormatException;
 
-public abstract class  Trainning implements Trainninginput {
+public abstract class  Trainning implements Trainninginput, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7231415161866520741L;
+	
 	protected TrainningKind kind = TrainningKind.Chest;
 	protected String Trainning;
     protected int Reps;
