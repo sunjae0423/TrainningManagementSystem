@@ -1,4 +1,4 @@
-package manager;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -160,7 +160,6 @@ public class TrainningManager implements Serializable{
 		System.out.println("4. Edit Sets");
 		System.out.println("5. Exit");
 		System.out.println("Select ont number between 1-5");
-    	
     }
 }
 
