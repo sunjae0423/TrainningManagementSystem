@@ -1,3 +1,4 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -146,6 +147,9 @@ public class TrainningManager implements Serializable{
     	}
     }
     
+    public int size() {
+    	return trainnings.size();
+    }
 
     
     public void showEditMenu() {
