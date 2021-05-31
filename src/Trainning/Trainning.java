@@ -84,8 +84,6 @@ public abstract class  Trainning implements Trainninginput, Serializable {
 	public void setSets(int sets) {
 		Sets = sets;
 	}
-	
-    String skind = "none";
     
     public abstract void printInfo(); 
     

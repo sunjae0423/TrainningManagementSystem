@@ -12,9 +12,15 @@ public interface Trainninginput {
 	
 	public void setTrainning(String trainning);
 	
+	public int getWeight();
+	
 	public void setWeight(int weight) throws WeightFormatException;
 	
+	public int getReps();
+	
 	public void setReps(int reps);
+	
+	public int getSets();
 	
 	public void setSets(int sets);
 	

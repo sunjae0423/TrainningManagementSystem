@@ -7,9 +7,19 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-public class TrainningAdder extends JFrame{
+import manager.TrainningManager;
+
+public class TrainningAdder extends JPanel{
 	
-	public TrainningAdder() {
+	WindowFrame frame;
+	
+	TrainningManager TrainningManager;
+	
+	public TrainningAdder(WindowFrame frame,TrainningManager TrainningManager) {
+		
+		this.frame = frame;
+		this.TrainningManager = TrainningManager;
+		
 		JPanel panel= new JPanel();
 		panel.setLayout(new SpringLayout());
 		
@@ -42,10 +52,8 @@ public class TrainningAdder extends JFrame{
 		
 		SpringUtilities.makeCompactGrid(panel, 5, 2, 6 ,6 ,6,6);
 		
-		this.setSize(300,300);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		this.setContentPane(panel);
+		this.add(panel);
 		this.setVisible(true);
 		
 	}

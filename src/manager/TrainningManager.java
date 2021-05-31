@@ -1,3 +1,4 @@
+package manager;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import Trainning.BackTrainning;
 import Trainning.ChestTrainning;
 import Trainning.LegTrainning;
 import Trainning.ShoulderTrainning;
+import Trainning.Trainning;
 import Trainning.TrainningKind;
 import Trainning.Trainninginput;
 
@@ -149,6 +151,10 @@ public class TrainningManager implements Serializable{
     
     public int size() {
     	return trainnings.size();
+    }
+    
+    public Trainninginput get(int index) {
+    	return (Trainning) trainnings.get(index);
     }
 
     
