@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import listeners.TrainningAdderCancelListener;
+import listeners.TrainningAdderListener;
 import manager.TrainningManager;
 
 public class TrainningAdder extends JPanel{
@@ -44,11 +46,18 @@ public class TrainningAdder extends JPanel{
 		JLabel labelSets = new JLabel("Sets : ", JLabel.TRAILING);
 		JTextField fieldSets = new JTextField(10);
 		labelweight.setLabelFor(fieldSets);
+		
+		
+		JButton saveButton = new JButton("save");
+		saveButton.addActionListener(new TrainningAdderListener(fieldTrainning,fieldweight,fieldReps,fieldSets,TrainningManager));
+		JButton cancelButton = new JButton("cancel");
+		cancelButton.addActionListener(new TrainningAdderCancelListener(frame));
+		
 		panel.add(labelSets);
 		panel.add(fieldSets);
 		
-		panel.add(new JButton("save"));
-		panel.add(new JButton("cancel"));
+		panel.add(saveButton);
+		panel.add(cancelButton);
 		
 		SpringUtilities.makeCompactGrid(panel, 5, 2, 6 ,6 ,6,6);
 		

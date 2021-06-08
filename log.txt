@@ -1,4 +1,0 @@
-5월 18, 2021 2:17:00 오후 log.Eventlogger log
-INFO: add a Trainning
-5월 18, 2021 2:17:03 오후 log.Eventlogger log
-INFO: View a list of Trainning

@@ -23,8 +23,6 @@ public class MenuManager {
 			TrainningManager = new TrainningManager(input);
 		}
 		
-		
-		
 		WindowFrame frame = new WindowFrame(TrainningManager);
 		selectMenu(input, TrainningManager);
 		putObject(TrainningManager, "trainningmanager.ser");
@@ -77,9 +75,6 @@ public class MenuManager {
 	
 	public static TrainningManager getObject(String filename) {
 		TrainningManager TrainningManager = null;
-		
-		
-		
 		try {
 			FileInputStream file = new FileInputStream(filename);
 			ObjectInputStream in = new ObjectInputStream(file);
@@ -100,8 +95,7 @@ public class MenuManager {
 			e.printStackTrace();
 		}
 		
-		return TrainningManager;
-		
+		return TrainningManager;		
 	}
 	
 	public static void putObject(TrainningManager TrainningManager, String filename) {

@@ -25,6 +25,17 @@ public class TrainningManager implements Serializable{
 	TrainningManager(Scanner input){
 		this.input = input;
 	}	
+	
+	public void AddTrainning(String Trainning, String Weight, String Reps, String Sets) {
+		Trainninginput trainninginput = new ChestTrainning(TrainningKind.Chest);
+		trainninginput.getUserInput(input);
+		trainnings.add(trainninginput);
+	}
+	
+	public void AddTrainning(Trainninginput trainninginput) {
+		trainnings.add(trainninginput);
+	}
+	
 	public void AddTrainning() {
 		int kind = 0;
 		Trainninginput trainninginput;
